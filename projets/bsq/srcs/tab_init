@@ -1,0 +1,22 @@
+char	**init_tab(t_rules *rules)
+{
+	buf = read_instructions();
+	if (buf[0] == 0)
+		return NULL;
+	init_rules(rules);
+	buffer = read_first_line(rules)
+	if (buffer[0] == 0)
+		return NULL;
+	tab = malloc(rules->nbL * sizeof(int*));
+	tab[i] = strdup(buffer, rules->nbC);
+	while (++i < nbL)
+	{
+		tab[i] = malloc(rules->nbC * sizeof(int));
+		if (!check_line_and_copy(tab[i]))
+		{
+			tab[0][0] = -1;
+			return tab;
+		}
+	}
+	return tab;
+}

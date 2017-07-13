@@ -1,0 +1,76 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   compute.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tle-meur <tle-meur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/09/21 12:17:05 by tle-meur          #+#    #+#             */
+/*   Updated: 2015/09/21 12:20:08 by tle-meur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef COMPUTE_H
+# define COMPUTE_H
+
+# include "utilities.h"
+
+# define MIN(x, y) ( ( (x) > (y) ) ? (y) : (x) )
+
+int	compute(int **tab, t_rules *rules);
+
+#endif
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_out.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tle-meur <tle-meur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/09/21 12:58:11 by tle-meur          #+#    #+#             */
+/*   Updated: 2015/09/21 12:58:12 by tle-meur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_OUT_H
+# define FT_OUT_H
+
+# include "utilities.h"
+
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	print_tab(int **tab, t_rules rules);
+
+#endif
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utilities.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tle-meur <tle-meur@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/09/21 12:21:46 by tle-meur          #+#    #+#             */
+/*   Updated: 2015/09/21 13:06:30 by tle-meur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef UTILITIES_H
+# define UTILITIES_H
+
+typedef	struct	s_rules
+{
+	int		nb_lig;
+	int		nb_col;
+	int		max;
+	int		x_max;
+	int		y_max;
+	char	vide;
+	char	obstacle;
+	char	plein;
+}				t_rules;
+
+int				ft_atoi(char *str, int nb, int sig);
+void			free_tab(int **tab, t_rules rules);
+void			fill_result(int **tab, t_rules rules);
+
+#endif

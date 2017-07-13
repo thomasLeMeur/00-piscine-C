@@ -1,0 +1,30 @@
+char	**init_tab(char *file, t_rules *rules)
+{
+	if ((fd = open(file, flags)) == -1)
+		return NULL;
+	buf = read_instructions();
+	if (buf[0] == 0)
+		return ((close(fd)) ? NULL : NULL);
+	if (!init_rules(buf, rules))
+		return ((close(fd)) ? NULL : NULL);
+	buffer = read_first_line(rules)
+	if (buffer[0] == 0)
+		return ((close(fd)) ? NULL : NULL);
+	tab = malloc(rules->nbL * sizeof(int*));
+	tab[i] = strdup(buffer, rules);
+	if (tab[i] == -1)
+		return ((close(fd)) ? NULL : NULL);
+	while (++i < nbL)
+	{
+		tab[i] = malloc(rules->nbC * sizeof(int));
+		if (!check_line_and_copy(fd, tab[i], rules))
+		{
+			tab[0][0] = -1;
+			return ((close(fd)) ? NULL : NULL);
+		}
+	}
+	if (read(fd, &c, 1))
+		tab[0][0] = -1;
+	close(fd);
+	return tab;
+}
